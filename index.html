@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hecker terminal</title>
+    <style>
+        body{
+    padding: 0;margin: 0;
+}
+
+
+
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensures content appears above the video */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: white;
+  align-items: center;
+  align-content: center;
+  padding-top: 300px;
+  font-family: 'Segoe UI', Tahoma;
+  font-size: 30px;
+  font-weight: 700;
+  transition: 5s;
+}
+
+.content:hover{
+    color: wheat;
+    transition: 1s;
+}
+
+/* Add this instead */
+.content h2::after {
+    content: ' . ';
+    display: inline-block;
+    width: 30px;
+    text-align: left;
+    animation: blink-dots 1.4s infinite;
+}
+
+@keyframes blink-dots {
+    0%, 20% {
+        color: transparent;
+        text-shadow: 0.4em 0 0 transparent, 0.8em 0 0 transparent;
+    }
+    40% {
+        color: currentColor;
+        text-shadow: 0.4em 0 0 transparent, 0.8em 0 0 transparent;
+    }
+    60% {
+        text-shadow: 0.4em 0 0 currentColor, 0.8em 0 0 transparent;
+    }
+    80%, 100% {
+        text-shadow: 0.4em 0 0 currentColor, 0.8em 0 0 currentColor;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="source/hacking_terminal_video_bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <div class="content">
+        
+    </div>
+
+    <script>
+        let html1 = `
+        <h2 class="first">Initializing Hacking</h2>
+`
+let html2 = `
+        <h2 class="second">Reading your file</h2>
+`
+let html3 = `
+        <h2 class="third">Password file Detected</h2>
+`
+let html4 = `
+        <h2 class="four">Sending all Passwords and Personal files to servers</h2>
+`
+let html5 = `
+        <h2 class="five">Cleaning up the logs</h2>
+`
+let html6 = `
+        <h2 class="six">Congrats you are hacked</h2>
+`
+
+setTimeout(() => {
+    document.getElementsByClassName("content")[0].innerHTML = html1;
+}, Math.ceil(1000 + Math.random() * 2000)); //2-4
+
+setTimeout(() => {
+    document.getElementsByClassName("content")[0].innerHTML = html2;
+}, Math.ceil(4100 + Math.random() * 2000)); //4-6
+
+setTimeout(() => {
+    document.getElementsByClassName("content")[0].innerHTML = html3;
+}, Math.ceil(6100 + Math.random() * 2000)); //6-8
+
+setTimeout(() => {
+    document.getElementsByClassName("content")[0].innerHTML = html4;
+}, Math.ceil(8100 + Math.random() * 2000)); // 8-10
+
+setTimeout(() => {
+    document.getElementsByClassName("content")[0].innerHTML = html5;
+}, Math.ceil(10100 + Math.random() * 2000)); //10-12
+
+setTimeout(() => {
+    document.getElementsByClassName("content")[0].innerHTML = html6;
+}, Math.ceil(12100 + Math.random() * 2000)); //12-14
+    </script>
+</body>
+
+</html>
